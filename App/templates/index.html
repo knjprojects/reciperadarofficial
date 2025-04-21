@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block title %}Flask MVC App{% endblock %}
+{% block page %}Flask MVC App{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <h1>Flask MVC</h1>
+    {% if is_authenticated %}
+        <p> Welcome {{current_user.username}} </p>
+    {% endif %}
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECIPEradar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&family=Pacifico&display=swap" />
+  
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RECIPEradar</h1>
+  </header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">My Inventory</a>
+    <a href="#">Add Recipe</a>
+    <a href="#">My Recipes</a>
+    <a href="#">Library</a>
+</nav>
+
+  <div class="container">
+    <div class="recipe-grid">
+      <div class="recipe-tile">
+        <img src="/static/images/spaghetti.jpg" alt="Spaghetti Bolognese" />
+        <h3>Spaghetti Bolognese</h3>
+        <p>Missing: Onions, Garlic</p>
+      </div>
+
+      <div class="recipe-tile">
+        <img src="/static/images/chicken_curry.jpg" alt="Chicken Curry" />
+        <h3>Chicken Curry</h3>
+        <p>Missing: Coconut Milk</p>
+      </div>
+
+      <div class="recipe-tile">
+        <img src="/static/images/vegan_bowl.jpg" alt="Vegan Bowl" />
+        <h3>Vegan Bowl</h3>
+        <p>Missing: Quinoa</p>
+      </div>
+
+      <div class="recipe-tile">
+        <img src="/static/images/pancakes.jpg" alt="Fluffy Pancakes" />
+        <h3>Fluffy Pancakes</h3>
+        <p>Missing: Eggs, Milk</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 RECIPEradar | Built with Flask & SQLAlchemy
+  </footer>
+</body>
+</html>
+
+{% endblock %}

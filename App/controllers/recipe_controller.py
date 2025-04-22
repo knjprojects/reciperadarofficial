@@ -8,3 +8,9 @@ def getRecipes():
         return []
     recipes_list = [recipe.get_json() for recipe in recipes]
     return recipes_list
+
+def createRecipe(userid,title,ingredients, instructions):
+    recipe=Recipe(id=userid,title=title,ingredients=ingredients,instructions=instructions)
+    if recipe:
+        return recipe
+    return None

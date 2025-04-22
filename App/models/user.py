@@ -1,6 +1,6 @@
 from werkzeug.security import check_password_hash, generate_password_hash
 from App.database import db
-
+from App.models import Recipe, Review
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username =  db.Column(db.String(20), nullable=False, unique=True)
@@ -24,3 +24,13 @@ class User(db.Model):
         """Check hashed password."""
         return check_password_hash(self.password, password)
 
+    def createRecipe(userid,title,ingredients, instructions):
+        recipe=Recipe(id=userid,title=title,ingredients=ingredients,instructions=instructions)
+        if recipe:
+            return recipe
+        return None
+    def reviewRecipe(self,recipeid,comment,rating):
+        rev=Review(userid=self.id,recipeid=recipeid,comment=comment,rating=rating)
+        if rev:
+            return rev
+        return None

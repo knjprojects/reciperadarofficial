@@ -34,8 +34,15 @@
     <a href="#">Library</a>
 </nav>
 
-  <div class="container">
-    <div class="recipe-grid">
+  <div class="container"><div class="recipe-grid">
+     {% for recipe in Recipes %}
+           <div class="recipe-tile">
+        <img src={{recipe.image}} alt="Spaghetti Bolognese" />
+        <h3>{{recipe.name}}</h3>
+        <p>Missing: Onions, Garlic</p>
+      </div>
+        {% endfor %} 
+    
       <div class="recipe-tile">
         <img src="/static/images/spaghetti.jpg" alt="Spaghetti Bolognese" />
         <h3>Spaghetti Bolognese</h3>

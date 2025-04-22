@@ -5,7 +5,7 @@ from models import db, Recipe
 recipe_views = Blueprint('recipe_views', __name__, template_folder='../templates')
 
 
-recipe_blueprint = Blueprint('recipe', __name__)
+#recipe_blueprint = Blueprint('recipe', __name__)
 
 @recipe_views.route('/recipes', methods=['GET'])
 def get_recipes():
